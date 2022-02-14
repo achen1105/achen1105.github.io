@@ -1,9 +1,9 @@
 html{
     color: white;
-    background-color: dimgray;
+    background-color:#222222;
     font-size: 80px;
     text-align: center;
-    font-family:'Comfortaa', 'Montserrat', sans-serif;
+    font-family: 'Comfortaa', cursive, 'Montserrat', sans-serif;
     width: 4524px;
 }
 
@@ -26,53 +26,75 @@ header{
     background-image: url(rodeo-drive.jpg);
     background-position-y: -1600px;
     padding: 550px;
-    font-size: 100px;
+    font-size: 120px;
     color: coral;
     text-shadow: 5px 0px white;
     text-decoration: none;
 }
 
 .section2{
-    background-color:lightslategray;
-    padding: 100px;
+    background-color:#222222;
+    padding: 500px;
 }
 
 .cards{
     background-color: black;
     height: 1500px;
-    width: 1200px;
+    width: 1000px;
     display: inline-block;
+    overflow: hidden;
     padding: 50px;
+    margin: 25px;
+}
+
+.cardsimg{
+    width: 1000px;
+    height: 600px;
+}
+
+.cardstext{
+    text-align: left;
 }
 
 .section3{
     background-color: black;
-    padding: 300px;
+    padding: 500px;
+    overflow: hidden;
 }
 
-.lainfo{
+.laskydesc{
     width: 1500px;
-    height: 800px;
+    height: 1000px;
     display: inline-block;
-    text-align: left;
+    vertical-align: middle;
+    text-align: justify;
     padding: 50px;
 }
 
+.lasky{
+    height: 1000px;
+    padding: 50px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .section4{
-    background-color: lightslategray;
-    padding: 300px;
+    background-color: #222222;
+    padding: 500px;
+    overflow: hidden;
 }
 
 .hollywood{
     height: 800px;
     display: inline-block;
+    vertical-align: middle;
     padding: 50px;
 }
 
 .hollywooddesc{
     width: 2000px;
-    height: 800px;
     display: inline-block;
+    vertical-align: middle;
     text-align: justify;
     padding: 50px;
 }
@@ -80,13 +102,14 @@ header{
 .beach{
     height: 800px;
     display: inline-block;
+    vertical-align: middle;
     padding: 50px;
 }
 
 .beachdesc{
     width: 2000px;
-    height: 800px;
     display: inline-block;
+    vertical-align: middle;
     text-align: justify;
     padding: 50px;
 }
@@ -115,5 +138,6 @@ h3{
 }
 
 p{
-    font-size: 60px;
+    font-size: 50px;
+    line-height: 75px;
 }

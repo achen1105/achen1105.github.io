@@ -4,7 +4,12 @@
         <title>
             LA - The City of Angels
         </title>
+
         <link rel="stylesheet" href="cscihw1.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&display=swap" rel="stylesheet">
+        
         <script>
             fetch('https://achen1105.github.io/20151127hw1/data.json')
             .catch(error => alert("could not fetch data.json"))
@@ -46,34 +51,34 @@
             <div class="section2">
                 <!--card 1-->
                 <div class="cards">
-                    <img id="griffith" alt = "Griffith Observatory" style="height: 800px">
-                    <p>
+                    <img id="griffith" alt = "Griffith Observatory" class="cardsimg">
+                    <div class="cardstext">
                         <h2>Griffith Observatory</h2>
-                        <h3 id="griffithdesc"></h3>
-                    </p>
+                        <p id="griffithdesc"></p>
+                    </div>
                 </div>
                 <!--card 2-->
                 <div class="cards">
-                    <img id="mountains" alt = "Mountains" style="height: 800px">
-                    <p>
+                    <img id="mountains" alt = "Mountains" class="cardsimg">
+                    <div class="cardstext">
                         <h2>Mountains</h2>
-                        <h3 id="mountainsdesc"></h3>
-                    </p>
+                        <p id="mountainsdesc"></p>
+                    </div>
                 </div>
                 <!--card 3-->
                 <div class="cards">
-                    <img id="universalstudios" alt= "Universal Studios" style="height: 800px">
-                    <p>
+                    <img id="universalstudios" alt= "Universal Studios" class="cardsimg">
+                    <div class="cardstext"> 
                         <h2>Universal Studios</h2>
-                        <h3 id="universalstudiosdesc"></h3>
-                    </p>
+                        <p id="universalstudiosdesc"></p>
+                    </div>
                 </div>
             </div>
 
             <!--section 3 single row-->
             <div class="section3">
-                <p id="laskydesc" class="lainfo"></p>
-                <img src="lasky.png" alt="LA sky" class="lainfo">
+                <p id="laskydesc" class="laskydesc"></p>
+                <img src="lasky.png" alt="LA sky" class="lasky">
             </div>
 
             <!-- mult row-->
