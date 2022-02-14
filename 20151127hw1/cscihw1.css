@@ -23,7 +23,7 @@ nav{
 
 header{
     /*img 4524 by 3016*/
-    background-image: url(../images/rodeo-drive.jpg);
+    background-image: url(rodeo-drive.jpg);
     background-position-y: -1600px;
     padding: 550px;
     font-size: 100px;
@@ -34,18 +34,20 @@ header{
 
 .section2{
     background-color:lightslategray;
+    padding: 100px;
 }
 
 .cards{
     background-color: black;
-    height: 800px;
-    width: 800px;
+    height: 1500px;
+    width: 1200px;
     display: inline-block;
+    padding: 50px;
 }
 
 .section3{
     background-color: black;
-    padding: 400px;
+    padding: 300px;
 }
 
 .lainfo{
@@ -53,25 +55,40 @@ header{
     height: 800px;
     display: inline-block;
     text-align: left;
+    padding: 50px;
 }
 
 .section4{
     background-color: lightslategray;
-    padding: 400px;
+    padding: 300px;
 }
 
 .hollywood{
-    width: 1500px;
     height: 800px;
     display: inline-block;
-    text-align: left;
+    padding: 50px;
 }
 
-.beaches{
-    width: 1500px;
+.hollywooddesc{
+    width: 2000px;
     height: 800px;
     display: inline-block;
-    text-align: left;
+    text-align: justify;
+    padding: 50px;
+}
+
+.beach{
+    height: 800px;
+    display: inline-block;
+    padding: 50px;
+}
+
+.beachdesc{
+    width: 2000px;
+    height: 800px;
+    display: inline-block;
+    text-align: justify;
+    padding: 50px;
 }
 
 footer{

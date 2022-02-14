@@ -4,9 +4,31 @@
         <title>
             LA - The City of Angels
         </title>
-        <link rel="stylesheet" href="styles/cscihw1.css">
+        <link rel="stylesheet" href="cscihw1.css">
         <script>
-            
+            fetch('https://achen1105.github.io/20151127hw1/data.json')
+            .catch(error => alert("could not fetch data.json"))
+            .then(response => response.json())
+            .then(data => insertData(data));
+
+            function insertData(data)
+            {
+                //alert(data.section2[0].image);
+                // section 2
+                document.getElementById("griffith").src = data.section2[0].image;
+                document.getElementById("griffithdesc").innerHTML = data.section2[0].text; 
+                document.getElementById("mountains").src = data.section2[1].image; 
+                document.getElementById("mountainsdesc").innerHTML = data.section2[1].text;   
+                document.getElementById("universalstudios").src = data.section2[2].image; 
+                document.getElementById("universalstudiosdesc").innerHTML = data.section2[2].text; 
+                // section 3 
+                document.getElementById("laskydesc").innerHTML = data.section3.text;  
+                // section 4
+                document.getElementById("hollywooddesc").innerHTML = data.section4[0].text;  
+                document.getElementById("hollywood").src = data.section4[0].image; 
+                document.getElementById("beach").src = data.section4[1].image; 
+                document.getElementById("beachdesc").innerHTML = data.section4[1].text;  
+            }
         </script>
     </head>
     <body>
@@ -24,45 +46,51 @@
             <div class="section2">
                 <!--card 1-->
                 <div class="cards">
-                    <img src = "images/griffith.jpg" alt = "Griffith Observatory" style="width: 50%">
+                    <img id="griffith" alt = "Griffith Observatory" style="height: 800px">
                     <p>
                         <h2>Griffith Observatory</h2>
-                        <h3>Griffith Observatory is a ...</h3>
+                        <h3 id="griffithdesc"></h3>
                     </p>
                 </div>
                 <!--card 2-->
                 <div class="cards">
-                    <img src = "images/mountains.jpg" alt = "Mountains" style="width: 50%">
+                    <img id="mountains" alt = "Mountains" style="height: 800px">
                     <p>
                         <h2>Mountains</h2>
-                        <h3>Griffith Observatory is a ...</h3>
+                        <h3 id="mountainsdesc"></h3>
                     </p>
                 </div>
                 <!--card 3-->
                 <div class="cards">
-                    <img src = "images/universalstudios.jpg" alt= "Universal Studios" style="width: 50%">
+                    <img id="universalstudios" alt= "Universal Studios" style="height: 800px">
                     <p>
                         <h2>Universal Studios</h2>
-                        <h3>Griffith Observatory is a ...</h3>
+                        <h3 id="universalstudiosdesc"></h3>
                     </p>
                 </div>
             </div>
 
             <!--section 3 single row-->
             <div class="section3">
-                <p class="lainfo"> Los Angeles is the City of Dreams...</p>
-                <img src="images/lasky.png" alt="LA sky" class="lainfo">
+                <p id="laskydesc" class="lainfo"></p>
+                <img src="lasky.png" alt="LA sky" class="lainfo">
             </div>
 
             <!-- mult row-->
             <div class="section4">
                 <div>
-                    <p class="hollywood"> No trip </p>
-                    <img src="images/hollywood.jpg" alt="Hollywood" class="hollywood">
+                    <img id="hollywood" alt="Hollywood" class="hollywood">
+                    <div class="hollywooddesc">
+                        <h1>Hollywood</h1>
+                        <p id="hollywooddesc"></p>
+                    </div>
                 </div>
                 <div>
-                    <img src="images/beach.jpg" alt="Beach" class="beaches">
-                    <p class="beaches"> One of the </p>
+                    <div class="beachdesc"> 
+                        <h1 style="text-align: right">Beaches</h1>
+                        <p id="beachdesc"></p>
+                    </div>
+                    <img id="beach" alt="Beach" class="beach">
                 </div>
             </div>
         </main>
