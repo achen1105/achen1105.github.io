@@ -1,0 +1,102 @@
+html{
+    color: white;
+    background-color: dimgray;
+    font-size: 80px;
+    text-align: center;
+    font-family:'Comfortaa', 'Montserrat', sans-serif;
+    width: 4524px;
+}
+
+nav{
+    background-color: black;
+    padding: 80px;
+    border-top: 5px coral solid;
+}
+
+.navlinks{
+    font-size: 80px;
+    color: white;
+    text-shadow: 5px 0px coral;
+    text-decoration: none;
+    padding: 150px;
+}
+
+header{
+    /*img 4524 by 3016*/
+    background-image: url(../images/rodeo-drive.jpg);
+    background-position-y: -1600px;
+    padding: 550px;
+    font-size: 100px;
+    color: coral;
+    text-shadow: 5px 0px white;
+    text-decoration: none;
+}
+
+.section2{
+    background-color:lightslategray;
+}
+
+.cards{
+    background-color: black;
+    height: 800px;
+    width: 800px;
+    display: inline-block;
+}
+
+.section3{
+    background-color: black;
+    padding: 400px;
+}
+
+.lainfo{
+    width: 1500px;
+    height: 800px;
+    display: inline-block;
+    text-align: left;
+}
+
+.section4{
+    background-color: lightslategray;
+    padding: 400px;
+}
+
+.hollywood{
+    width: 1500px;
+    height: 800px;
+    display: inline-block;
+    text-align: left;
+}
+
+.beaches{
+    width: 1500px;
+    height: 800px;
+    display: inline-block;
+    text-align: left;
+}
+
+footer{
+    background-color: black;
+    padding: 200px;
+}
+
+.footertext{
+    height: 200px;
+    width: 2000px;
+    display: inline-block;
+}
+
+h1{
+    font-size: 80px;
+}
+
+h2{
+   font-size: 70px; 
+}
+
+h3{
+    font-size: 50px;
+}
+
+p{
+    font-size: 60px;
+}
