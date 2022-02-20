@@ -1,7 +1,7 @@
 <!--
     Anita Chen
     CSCI 571 Spring 2022 HW 1
-    2022/02/21/
+    2022/02/21
 -->
 <!DOCTYPE html>
 <html>
@@ -28,17 +28,27 @@
                 document.getElementById("griffith").src = data.section2[0].image;
                 document.getElementById("griffithdesc").innerHTML = 
                     "<h2>" + data.section2[0].heading + "</h2><p>" + data.section2[0].text + "</p>";
+                
                 document.getElementById("mountains").src = data.section2[1].image; 
-                document.getElementById("mountainsdesc").innerHTML = data.section2[1].text;   
+                document.getElementById("mountainsdesc").innerHTML = 
+                    "<h2>" + data.section2[1].heading + "</h2><p>" + data.section2[1].text + "</p>"; 
+                
                 document.getElementById("universalstudios").src = data.section2[2].image; 
-                document.getElementById("universalstudiosdesc").innerHTML = data.section2[2].text; 
+                document.getElementById("universalstudiosdesc").innerHTML =
+                    "<h2>" + data.section2[2].heading + "</h2><p>" + data.section2[2].text + "</p>";
+                
                 // section 3 
                 document.getElementById("laskydesc").innerHTML = data.section3.text;  
+                
                 // section 4
-                document.getElementById("hollywooddesc").innerHTML = data.section4[0].text;  
+                document.getElementById("hollywooddesc").innerHTML = 
+                "<h1>" + data.section4[0].heading + "</h1><p>" + data.section4[0].text + "</p>";  
                 document.getElementById("hollywood").src = data.section4[0].image; 
+                
                 document.getElementById("beach").src = data.section4[1].image; 
-                document.getElementById("beachdesc").innerHTML = data.section4[1].text;  
+                document.getElementById("beachdesc").innerHTML = 
+                '<h1 style="text-align: right">' + data.section4[1].heading + "</h1><p>" + data.section4[1].text + "</p>";  
+                document.getElementById("hollywood").src = data.section4[0].image; 
             }
         </script>
     </head>
@@ -64,23 +74,18 @@
                 <div class="cards">
                     <img id="griffith" alt = "Griffith Observatory" class="cardsimg">
                     <div class="cardstext" id="griffithdesc">
-                        
                     </div>
                 </div>
                 <!--card 2-->
                 <div class="cards">
                     <img id="mountains" alt = "Mountains" class="cardsimg">
-                    <div class="cardstext">
-                        <h2>Mountains</h2>
-                        <p id="mountainsdesc"></p>
+                    <div class="cardstext" id="mountainsdesc">
                     </div>
                 </div>
                 <!--card 3-->
                 <div class="cards">
                     <img id="universalstudios" alt= "Universal Studios" class="cardsimg">
-                    <div class="cardstext"> 
-                        <h2>Universal Studios</h2>
-                        <p id="universalstudiosdesc"></p>
+                    <div class="cardstext" id="universalstudiosdesc"> 
                     </div>
                 </div>
             </div>
@@ -95,15 +100,11 @@
             <div class="section4">
                 <div>
                     <img id="hollywood" alt="Hollywood" class="hollywood">
-                    <div class="hollywooddesc">
-                        <h1>Hollywood</h1>
-                        <p id="hollywooddesc"></p>
+                    <div class="hollywooddesc" id="hollywooddesc">
                     </div>
                 </div>
                 <div>
-                    <div class="beachdesc"> 
-                        <h1 style="text-align: right">Beaches</h1>
-                        <p id="beachdesc"></p>
+                    <div class="beachdesc" id="beachdesc"> 
                     </div>
                     <img id="beach" alt="Beach" class="beach">
                 </div>
@@ -111,20 +112,23 @@
         </main>
 
         <footer>
-            <div class="footertext">
+            <div class="footertext1">
                 <p>
-                    Tip the world over on its side and 
-                    everything loose will end up in Los Angeles.
+                    Tip the world over on its side and everything loose will land 
+                    in Los Angeles.
                 </p>
                 <p>
                     <strong>- Frank Lloyd Wright</strong>
                 </p>
             </div>
-            <div class="footertext">
-                <h2 style="font-family:'Montserrat'"> Designed By </h2>
-                <h3 style="font-family:'Montserrat'"> Anita Chen </h3>
-                <h3><a href="mailto:achen999@usc.edu" class="contacts">achen999@usc.edu</a></h3>
-                <h3><a href="tel:+19493518538" class="contacts">(+1) 949 351 8538</a></h3>
+            <div class="footertext2">
+                <h3> Designed By </h3>
+                <h4> Anita Chen </h4>
+                <p>
+                    <a href="mailto:achen999@usc.edu" class="contacts">achen999@usc.edu</a>
+                    <br>
+                    <a href="tel:+19493518538" class="contacts">(+1) 949 351 8538</a>
+                </p>
             </div>
         </footer>
     </body>

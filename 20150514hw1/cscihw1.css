@@ -1,3 +1,9 @@
+/**
+    Anita Chen
+    CSCI 571 Spring 2022 HW 1
+    2022/02/21
+*/
+
 html{
     color: white;
     background-color:#222222;
@@ -191,12 +197,21 @@ header{
 
 footer{
     background-color: black;
-    padding: 200px;
+    height: 700px;
+    width: 4524px;
+    display: inline-block;
 }
 
-.footertext{
+.footertext1{
     height: 200px;
-    width: 2000px;
+    width: 1550px;
+    padding: 50px 300px 50px 0px;
+    display: inline-block;
+}
+
+.footertext2{
+    height: 200px;
+    padding: 50px 300px 50px 300px;
     display: inline-block;
 }
 
@@ -210,7 +225,13 @@ h2{
 }
 
 h3{
+    font-size: 60px;
+    font-family:'Montserrat';
+}
+
+h4{
     font-size: 50px;
+    font-family:'Montserrat';
 }
 
 p{
@@ -239,4 +260,3 @@ p{
 .contacts:active{
     text-decoration: underline;
 }
-
