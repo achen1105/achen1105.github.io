@@ -1,3 +1,8 @@
+<!--
+    Anita Chen
+    CSCI 571 Spring 2022 HW 1
+    2022/02/21/
+-->
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,7 +17,7 @@
         
         <script>
             fetch('https://achen1105.github.io/20151127hw1/data.json')
-            .catch(error => alert("could not fetch data.json"))
+            .catch(error => alert("Could not fetch data.json"))
             .then(response => response.json())
             .then(data => insertData(data));
 
@@ -21,7 +26,8 @@
                 //alert(data.section2[0].image);
                 // section 2
                 document.getElementById("griffith").src = data.section2[0].image;
-                document.getElementById("griffithdesc").innerHTML = data.section2[0].text; 
+                document.getElementById("griffithdesc").innerHTML = 
+                    "<h2>" + data.section2[0].heading + "</h2><p>" + data.section2[0].text + "</p>";
                 document.getElementById("mountains").src = data.section2[1].image; 
                 document.getElementById("mountainsdesc").innerHTML = data.section2[1].text;   
                 document.getElementById("universalstudios").src = data.section2[2].image; 
@@ -37,11 +43,16 @@
         </script>
     </head>
     <body>
+        <div class="topborder">
+            <!--Top border-->
+        </div>
+
         <nav>
-            <a class ="navlinks" href="cscihw1home.html">Home</a>
-            <a class ="navlinks" href="cscihw1explore.html">Explore</a>
-            <a class ="navlinks" href="cscihw1contact.html">Contact</a>
+            <a class ="navlinks" href="cscihw1.html">Home</a>
+            <a class ="navlinks" href="cscihw1404.html">Explore</a>
+            <a class ="navlinks" href="cscihw1404.html">Contact</a>
         </nav>
+
         <header>
             LA - The City of Angels
         </header>
@@ -52,9 +63,8 @@
                 <!--card 1-->
                 <div class="cards">
                     <img id="griffith" alt = "Griffith Observatory" class="cardsimg">
-                    <div class="cardstext">
-                        <h2>Griffith Observatory</h2>
-                        <p id="griffithdesc"></p>
+                    <div class="cardstext" id="griffithdesc">
+                        
                     </div>
                 </div>
                 <!--card 2-->
@@ -107,14 +117,14 @@
                     everything loose will end up in Los Angeles.
                 </p>
                 <p>
-                    - Frank Lloyd Wright
+                    <strong>- Frank Lloyd Wright</strong>
                 </p>
             </div>
             <div class="footertext">
-                <h2> Designed By </h2>
-                <h3> Anita Chen </h3>
-                <h3> achen999@usc.edu</h3>
-                <h3>(+1) 949 351 8538 </h3>
+                <h2 style="font-family:'Montserrat'"> Designed By </h2>
+                <h3 style="font-family:'Montserrat'"> Anita Chen </h3>
+                <h3><a href="mailto:achen999@usc.edu" class="contacts">achen999@usc.edu</a></h3>
+                <h3><a href="tel:+19493518538" class="contacts">(+1) 949 351 8538</a></h3>
             </div>
         </footer>
     </body>
