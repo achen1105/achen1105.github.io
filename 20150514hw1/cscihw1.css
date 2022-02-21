@@ -91,7 +91,7 @@ header{
 .header404{
     /*img 4524 by 3016*/
     /*background-image: url(404-featured.jpg);*/
-    background-image: linear-gradient(rgba(233, 94, 1, 0.5), rgba(233, 94, 1, 0.5)), url(404-featured.jpg);
+    background-image: linear-gradient(rgba(114, 58, 33, 0.7), rgba(114, 58, 33, 0.7)), url(404-featured.jpg);
     background-position-y: -700px;
     background-size: 4000px;
     background-position: center;
