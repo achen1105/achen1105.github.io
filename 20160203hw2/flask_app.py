@@ -16,21 +16,21 @@ def start():
     else:
         return render_template('website.html', output = '')
 
-@app.route('/<int:age>/<int:weight>')
+@app.route('/<int:age>/<int:weight>', methods=['GET','POST'])
 def getBP(age, weight):
+    # entry on old url
     if request.method=='POST':
         age1 = request.form.get('ageName')
         weight1 = request.form.get('weightName')
         return redirect(url_for('getBP', age=age1, weight=weight1))
+    # calculate bp
     else:
         clf = joblib.load("regrhw2.pkl")
         #for pythonanywhere: clf = joblib.load("/home/achen1105/mysite/regrhw2.pkl")
         x = pd.DataFrame([[age, weight]], columns=["Age", "Weight"])
         prediction = clf.predict(x)[0]
-        #bp = age*weight
 
     return render_template('website.html', output = str(prediction))
-    #return render_template('website.html', output = str(bp))
 
 if __name__ == '__main__':
     app.run()

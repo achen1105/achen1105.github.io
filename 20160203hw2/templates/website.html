@@ -5,7 +5,7 @@
         <title>
             Blood Pressure Indicator
         </title>
-        <link rel="stylesheet" href="/static/hw2styles.css">
+        <link rel="stylesheet" href="../static/hw2styles.css">
         <!-- for pythonanywhere: <link rel="stylesheet" href="/static/hw2styles.css"> -->
     </head>
     <body>
@@ -15,7 +15,7 @@
             <table>
                 <tr>
                   <td>
-                    <div>
+                    <div style="float: right; font-weight: bold;">
                         <label>
                             Age <div style="display:inline; color:red;">*</div>
                         </label>
@@ -25,14 +25,14 @@
                     <div>
                         <input name="ageName" type="number" placeholder="Enter age in years" required 
                         oninvalid="this.setCustomValidity('Please enter a number')"
-                        onvalid="this.setCustomValidity('')">
+                        onchange="this.setCustomValidity('')">
                         <br>
                     </div>
                   </td>
                 </tr>
                 <tr>
                     <td>
-                      <div>
+                      <div style="float: right; font-weight: bold;">
                         <label>
                             Weight <div style="display:inline; color:red;">*</div>
                         </label>
@@ -42,7 +42,7 @@
                       <div>
                           <input name="weightName" type="number" placeholder="Enter weight in kg" required
                           oninvalid="this.setCustomValidity('Please enter a number')"
-                          onvalid="this.setCustomValidity('')">
+                          onchange="this.setCustomValidity('')">
                       </div>
                     </td>
                   </tr>
