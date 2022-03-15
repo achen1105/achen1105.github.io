@@ -1,1 +1,5 @@
-Instructions: https://bytes.usc.edu/cs571/s22_Web0110Tech/hw/HW2/v1/index.html
+Anita Chen achen999, HW2, CSCI 571 Spring 2022
+
+Python Anywhere: https://achen1105.pythonanywhere.com/
+Github Page: https://achen1105.github.io/20151127index.html
+HW2 Instructions: https://bytes.usc.edu/cs571/s22_Web0110Tech/hw/HW2/v1/index.html
