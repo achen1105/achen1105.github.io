@@ -1,26 +1,37 @@
+# Anita Chen achen999, HW2, CSCI 571 Spring 2022
 # A very simple Flask Hello World app for you to get started with...
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
+import pandas as pd
+import joblib
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET','POST'])
-def hello_world():
-    #return 'Hello from Flask!'
+def start():
     if request.method=='POST':
-        return 'AAA';
-        #age1 = request.form.get('ageName')
-        #weight1 = request.form.get('weightName')
-       # return redirect(url_for('getBP', age=age1, weight=weight1))
-
-    return render_template('website.html', output = '')
+        age1 = request.form.get('ageName')
+        weight1 = request.form.get('weightName')
+        return redirect(url_for('getBP', age=age1, weight=weight1))
+    else:
+        return render_template('website.html', output = '')
 
 @app.route('/<int:age>/<int:weight>')
 def getBP(age, weight):
-    bp = age*weight
-    return render_template('website.html', output = str(bp))
-    #return str(age*weight)
+    if request.method=='POST':
+        age1 = request.form.get('ageName')
+        weight1 = request.form.get('weightName')
+        return redirect(url_for('getBP', age=age1, weight=weight1))
+    else:
+        clf = joblib.load("regrhw2.pkl")
+        #for pythonanywhere: clf = joblib.load("/home/achen1105/mysite/regrhw2.pkl")
+        x = pd.DataFrame([[age, weight]], columns=["Age", "Weight"])
+        prediction = clf.predict(x)[0]
+        #bp = age*weight
 
+    return render_template('website.html', output = str(prediction))
+    #return render_template('website.html', output = str(bp))
 
 if __name__ == '__main__':
     app.run()
+
