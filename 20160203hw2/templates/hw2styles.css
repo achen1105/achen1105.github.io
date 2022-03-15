@@ -1,0 +1,31 @@
+html{
+    padding: 200px;
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+
+}
+
+h1{
+    color:firebrick;
+    margin: auto;
+}
+
+p{
+    color: firebrick;
+}
+
+table{
+    margin-left: 25px;
+}
+
+button{
+    color: white;
+    background-color:navy;
+    margin-left: 100px;
+    margin-top: 25px;
+}
+
+h4{
+    margin-left: 100px;
+}

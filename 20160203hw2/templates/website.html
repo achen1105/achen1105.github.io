@@ -1,0 +1,56 @@
+<!--Anita Chen achen999, HW2, CSCI 571 Spring 2022-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Blood Pressure Indicator
+        </title>
+        <link rel="stylesheet" href="hw2styles.css">
+    </head>
+    <body>
+        <h1>Blood Pressure Indicator</h1>
+        <p> Fill out the form to get your Blood Pressure estimate!</p>
+        <form method=POST>
+            <table>
+                <tr>
+                  <td>
+                    <div>
+                        <label>
+                            Age <div style="display:inline; color:red;">*</div>
+                        </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                        <input id="aInput" name="ageName" type="number" placeholder="Enter age in years" required 
+                        oninvalid="this.setCustomValidity('Please enter a number')"
+                        onvalid="this.setCustomValidity('')">
+                        <br>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                    <td>
+                      <div>
+                        <label>
+                            Weight <div style="display:inline; color:red;">*</div>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <input id="wInput" name="weightName" type="number" placeholder="Enter weight in kg" required
+                        oninvalid="this.setCustomValidity('Please enter a number')"
+                        onvalid="this.setCustomValidity('')">
+                      </div>
+                    </td>
+                  </tr>
+              </table>
+            
+            <button type="submit">
+                Calculate
+            </button>
+            <h4>{{ output }}</h4>
+        </form>
+    </body>
+</html>
