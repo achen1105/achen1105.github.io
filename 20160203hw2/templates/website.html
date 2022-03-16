@@ -23,7 +23,7 @@
                   </td>
                   <td>
                     <div>
-                        <input name="ageName" type="number" placeholder="Enter age in years" required 
+                        <input name="ageName" type="number" min="0" placeholder="Enter age in years" required 
                         oninvalid="this.setCustomValidity('Please enter a number')"
                         onchange="this.setCustomValidity('')">
                         <br>
@@ -40,7 +40,7 @@
                     </td>
                     <td>
                       <div>
-                          <input name="weightName" type="number" placeholder="Enter weight in kg" required
+                          <input name="weightName" type="number" min="0" placeholder="Enter weight in kg" required
                           oninvalid="this.setCustomValidity('Please enter a number')"
                           onchange="this.setCustomValidity('')">
                       </div>
