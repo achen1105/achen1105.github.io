@@ -19,7 +19,7 @@ const Campus = (props) => {
                     [-64.78, 32.3]
                 ]
                 */
-                // USC location boundaries
+                // Anita USC location boundaries
                 rings: 
                 [
                     [-118.2864345,34.0188307],
