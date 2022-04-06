@@ -1,0 +1,172 @@
+
+
+
+<!--
+id=.CodeMirror is the textarea on the left;
+id=output is on the right
+-->
+
+
+
+
+
+<meta charset=utf-8>
+<link rel=stylesheet href=c/c.css>
+<title>The Magic Shell</title>
+<script src=c/c.js></script>
+
+<style>
+body {
+  padding:5px;
+}
+p {
+ margin-left:5px;
+ margin-top:6px;
+ font-size:13px;
+ font-family: Helvetica, sans-serif;
+}
+
+a {
+ font-size:13px;
+ font-family: Helvetica, sans-serif;
+}
+</style>
+
+<div id="split-v0" style="margin-left:0px;background: #dbfbe6; border:1px solid #AAAAAA;padding:6px;">
+<p style="font-size:10px;">This is a barebones 'livecoding' interface for rendering HTML - enter HTML+CSS+JS on the left (input area), 
+to view the (rendered) result on the right (output area); you can curtain-drag the separator.
+
+<p style="font-size:10px;">Click <a style="font-size:10px;" href="run.html">here</a> to refresh this page (all content - input,output - will be lost, ie the page will be wiped clean!).</p>
+
+<p style="font-size:10px;">Click <a style="font-size:10px;" href="run.html?x=bare">here</a> to get/reload a pre-populated input+output area, ready for JavaScript. You can use document.write() to print to the output area, or use prtt(), or console.log(), or, alert().
+
+
+<p style="font-size:10px;">Click <button onclick="cap()">here</button> to create a 'screenshot' of this page (just left side) - which 
+will get appended to the bottom of this page (so you can RMB and save it). Click <button onclick="ccap()">here</button> to remove it.</p>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</script>
+
+<script>
+
+   Element.prototype.remove = function () {
+    this.parentElement.removeChild(this);
+}
+NodeList.prototype.remove = HTMLCollection.prototype.remove = function () {
+    for (var i = this.length - 1; i >= 0; i--) {
+        if (this[i] && this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
+}// remove()
+
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+
+    function cap() {  
+      html2canvas(document.getElementById('split-0')).then(function(scr) {
+       //document.getElementById("fakeScrShot").remove();
+       const container = document.querySelector('#scrH');
+       removeAllChildNodes(container);
+       scr.setAttribute('id','fakeScrId');
+       document.getElementById("scrH").appendChild(scr);
+       });
+    }// cap
+
+    function ccap() {  
+       const container = document.querySelector('#scrH');
+       removeAllChildNodes(container);
+    }// ccap - clearcap
+</script>
+
+
+
+<style>
+.split {
+    display: flex;
+    flex-direction: row;
+}
+
+.gutter {
+    background-color: #eee;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+    cursor: col-resize;
+}
+
+.second-row { flex-grow: 1; border: none; margin: 0; padding: 0; }
+</style>
+
+
+<div id="split-v1" class="split" style="margin-top:5px;">
+    <div id="split-0"><textarea style="overflow:auto;height:450px;font-size:30px;font-weight:bold;" id=code></textarea></div>
+    <div id="split-1"><iframe id='output' style="width:100%;height:450px;overflow:scroll"></iframe></div>
+</div>
+
+<div style="height:0px;border:1px solid #BBBBBB;"/>
+
+<div id='scrH'></div>
+
+
+<script src="c/split.1.6.5.min.js"></script>
+<script>
+/*Split(['#split-v0', '#split-v1'],{
+    direction: 'vertical',
+    minSize: 15,
+    maxSize: 75,
+});*/ // pain :)
+Split(['#split-0', '#split-1']);
+</script>
+
+
+<style>
+* { margin: 0; padding: 0; border: 0; outline: 0; box-sizing: border-box; font-size: 14px; }
+
+#code, 
+#output { background:#f0edf8;   }
+
+.CodeMirror {background-color:#ffdcb8;}
+</style>
+
+
+<script>
+c='';
+E=CodeMirror.fromTextArea(code,{lineNumbers:true,lineWrapping:true,mode:"htmlmixed"});
+U=z=>{if(c)output.srcdoc=c}; // 'saty'}; //c};
+
+
+
+E.on("keyup",e=>{location.hash=btoa(c=E.getValue());U();})
+var id = null, url = null;
+onload=()=>{
+  if(location.hash){E.setValue(c = atob(location.hash.slice(1)));U();}
+  else if(location.search){
+    [url,rest]=location.search.split("&");
+    if(url){
+      console.log(url);
+      //page=url.replace(/\?demo=(.*)/,"../$1/index.html");
+      page=url.replace(/\?x=(.*)/,"x/$1/index.html");
+      output.src=page;
+      // alert(output.src); x/<>/index.html
+      //U(); ///
+      fetch(page).then(data=>data.text()).then(txt=>E.setValue(txt.replace(/\.\.\/\.\./g,'..')));
+      //U();// 
+      
+    }
+  }
+ 
+}
+E.on("keyup",e=>{location.hash=btoa(c=E.getValue());U();})
+
+</script>
