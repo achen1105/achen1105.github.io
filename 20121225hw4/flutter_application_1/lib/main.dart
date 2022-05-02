@@ -55,40 +55,44 @@ class HomePage extends State<HomePageState> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     //Grid view
     Widget gridSection = GridView.count(
-      crossAxisCount: 3,
-      children: [
-        // iterate through all the image paths saved in photoList
-        // for each path - set up fullScreenImage display, and a 'child' ClipRRect widget that
-        // will hold as ITS child, an Image (given its path)
-        for (var i in photoList)
-          GestureDetector(
-            onTap: () {
-               fullScreenImage(context, i);
-            },
-            child: ClipRRect(
-                borderRadius: BorderRadius.circular(10.0),
-                child: Image.file(
-                  File(i),
-                  // width: 800,
-                  // height: 800,
-                  fit: BoxFit.cover,
+        crossAxisCount: 3,
+        mainAxisSpacing: 10,
+        crossAxisSpacing: 10,
+        children: [
+          // iterate through all the image paths saved in photoList
+          // for each path - set up fullScreenImage display, and a 'child' ClipRRect widget that
+          // will hold as ITS child, an Image (given its path)
+          for (var i in photoList)
+            GestureDetector(
+                onTap: () {
+                  fullScreenImage(context, i);
+                },
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15.0),
+                  child: Image.file(
+                    File(i),
+                    // width: 800,
+                    // height: 800,
+                    fit: BoxFit.cover,
                   ),
-              )
-          ),
-      ]
-    );
-  
+                )),
+        ]);
+
     // Our two buttons - one for gallery imgs, one for camera...
+    // https://stackoverflow.com/questions/66689867/flutter-2-button-with-icon-and-text
     Widget buttonSection = Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         MaterialButton(
-          color: Colors.blue,
-          child: const Text(
-            "Add from Gallery",
-            style:
-                TextStyle(color: Colors.white70, fontWeight: FontWeight.bold),
-          ),
+          color: Colors.white70,
+          child:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            Icon(Icons.photo_library, color: Colors.blue),
+            const Text(
+              "Add from Gallery",
+              style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+            ),
+          ]),
           onPressed: () {
             getPhoto(context, ImageSourceType.gallery);
           },
@@ -97,13 +101,15 @@ class HomePage extends State<HomePageState> with WidgetsBindingObserver {
         // ADD the button for camera capture, similar to the above [use the 'enum'!]
         MaterialButton(
           color: Colors.blue,
-          child: const Text(
-            "Use Camera",
-            style:
-                TextStyle(color: Colors.white70, fontWeight: FontWeight.bold),
-          ),
+          child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            Icon(Icons.camera_alt, color: Colors.white70),
+            const Text(
+              "Use Camera",
+              style: TextStyle(color: Colors.white70, fontWeight: FontWeight.bold),
+            ),
+          ]),
           onPressed: () {
-            getPhoto(context, ImageSourceType.gallery);
+            getPhoto(context, ImageSourceType.camera);
           },
         ),
       ],
@@ -157,17 +163,19 @@ class FullScreenImg extends State<FullScreenState> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text("Full screen image")),
+        appBar: AppBar(
+          title: const Text("Album 571"),
+        ),
         body: Stack(
+          alignment: Alignment.center,
           children: [
             Image.file(File(path)),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const Spacer(),
-                const Text("Image width:"),
-                Text(width.toString()),
-                const Text("Image height"),
-                Text(height.toString())
+                Text("Image width: " + width.toString()),
+                Text("Image height: " + height.toString()),
               ],
             )
           ],
