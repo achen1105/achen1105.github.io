@@ -1,0 +1,17 @@
+body{
+    background-color: #ffd1dc;
+}
+
+.firstHomePanel
+{
+    height: 300px;
+    width: max-content;
+    background-color: #fff5ee;
+}
+
+.secondHomePanel
+{
+    height: 300px;
+    width: max-content;
+    background-color: #faf4ec;
+}
